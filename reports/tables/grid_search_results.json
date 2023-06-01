@@ -1,0 +1,22 @@
+{
+    "params": {
+        "iterations": 1
+    },
+    "cv_results": {
+        "iterations": [
+            0
+        ],
+        "test-RMSE-mean": [
+            2.60826837165333
+        ],
+        "test-RMSE-std": [
+            0.48533923185867384
+        ],
+        "train-RMSE-mean": [
+            2.6197496127501965
+        ],
+        "train-RMSE-std": [
+            0.21565084285705893
+        ]
+    }
+}
