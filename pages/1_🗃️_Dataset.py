@@ -7,7 +7,7 @@ plt.style.use('ggplot')
 
 st.set_page_config(
     page_title='Dataset',
-    page_icon="📊"
+    page_icon="📊",
 )
 
 st.markdown('# Dataset')

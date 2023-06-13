@@ -1,13 +1,13 @@
 import streamlit as st
+from src.utils import show_code
 
 st.set_page_config(
     page_title='Photocatalysis',
-    page_icon='🌼'
+    page_icon='🌼',
 )
 
 st.write('# Welcome to application 🌼')
 
-st.sidebar.success('Welcome page')
 st.sidebar.header('Welcome page')
 
 st.markdown(
@@ -16,6 +16,6 @@ st.markdown(
     **Select any page for see our model**
     
     ### About us
-    - We are from [ITMO University](https://itmo.ru) and [ISC](https://infochemistry.ru)
+    - We are from [ITMO University](https://itmo.ru) and [Infochemistry Scientific Center (ISC)](https://infochemistry.ru)
     """
 )

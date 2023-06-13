@@ -22,7 +22,7 @@ plt.style.use('ggplot')
 
 st.set_page_config(
     page_title='Predict',
-    page_icon="🧪"
+    page_icon="🧪",
 )
 
 st.markdown('# Predict')
@@ -77,5 +77,5 @@ if st.button("Predict W(H2)"):
                 #### There is best parameters
                 ''')
     
-    st.table(best_result)
+    st.dataframe(best_result)
     
