@@ -57,6 +57,7 @@ matrix = processed_data.corr().round(2)
 mask = np.triu(np.ones_like(processed_data.corr().round(2)))
 sns.heatmap(matrix, annot=True, ax=ax, cmap='Blues', mask=mask)
 st.pyplot(fig)
+fig.savefig('../corr_matrix.svg', format='svg', dpi=600)
 
 st.markdown(
     """

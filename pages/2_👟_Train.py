@@ -11,7 +11,7 @@ from sklearn.metrics import *
 from src.models.predict_model import load_les, load_model, load_sc
 import pickle
 
-plt.style.use('ggplot')
+# plt.style.use('ggplot')
 
 st.set_page_config(
     page_title='Train',
@@ -98,6 +98,11 @@ st.markdown(f"""
             #### MSE = {mean_squared_error(y_true, pred)}
             """)
 
+pd.DataFrame(data={
+    'y_true': y_true,
+    'pred': pred
+}).to_excel('../output.xlsx')
+
 fig, ax = plt.subplots(figsize=(15, 9))
 ax.scatter(pred, y_true, color='blue')
 ax.plot([y_true.min(), y_true.max()], [y_true.min(), y_true.max()], 'r--', lw=2)
@@ -105,4 +110,6 @@ ax.set_xlabel('Predicted label')
 ax.set_ylabel('True label')
 ax.set_title('Regression model')
 st.pyplot(fig)
+fig.tight_layout()
+fig.savefig('../regression_plot.svg', format='svg', dpi=600)
     
