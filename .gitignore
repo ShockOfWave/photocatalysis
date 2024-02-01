@@ -61,7 +61,6 @@ target/
 .env
 
 # Database
-*.db
 *.rdb
 
 # Pycharm
@@ -89,4 +88,22 @@ target/
 # Mypy cache
 .mypy_cache/
 /data
-/models
+
+# CatBoost logs
+**/catboost_info/**
+
+# Poetry lock
+poetry.lock
+
+# Hide png and pdf
+**.png**
+**.pdf**
+
+# streamlit secrets
+.streamlit/secrets.toml
+
+# Hide folder with notebooks
+notebooks/
+
+# Hide catboost logs
+**catboost_info**

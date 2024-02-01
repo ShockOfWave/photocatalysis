@@ -1,0 +1,18 @@
+[[pages]]
+path = 'app/welcome.py'
+name = 'Welcome!'
+
+[[pages]]
+path = "app/dataset.py"
+name = "Dataset analysis"
+icon = "🗃"
+
+[[pages]]
+path = 'app/train.py'
+name = 'Train and evaluation'
+icon = '👟'
+
+[[pages]]
+path = 'app/predict.py'
+name = 'Use model'
+icon = '🧪'

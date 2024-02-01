@@ -1,0 +1,2 @@
+,iterations,learning_rate,depth,l2_leaf_reg,bootstrap_type,random_strength,bagging_temperature,od_type,od_wait
+0,4324,0.05199940189807384,4,4.832997288457917e-07,Bayesian,0.000583210775350143,2.38365411669999,Iter,32

@@ -1,7 +1,2 @@
-.dockerignore
-docker
-Dockerfile
-docker-compose.yml
-.git
-.gitignore
-venv
+/notebooks
+optuna_models_optimization.db

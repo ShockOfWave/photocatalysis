@@ -1,0 +1,2 @@
+,learning_rate_init,max_iter,beta_1,beta_2,batch_size,hidden_layer_sizes
+0,0.0004233629197193784,643,0.6503854159382125,0.9283537855259163,40,"(74,)"

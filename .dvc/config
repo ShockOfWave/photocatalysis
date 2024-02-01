@@ -1,6 +1,0 @@
-[core]
-    autostage = true
-    remote = myremote
-['remote "myremote"']
-    url = s3://photocatalysis
-    endpointurl = https://storage.yandexcloud.net/
