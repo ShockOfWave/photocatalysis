@@ -1,9 +1,11 @@
+import os
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-from src.utils import check_password
+from src.utils import PATH_TO_DATA, check_password
 
 
 if not check_password():
@@ -34,8 +36,8 @@ st.markdown(
 
 @st.cache_data
 def load_data():
-    raw_data = pd.read_csv('data/raw/data.csv', delimiter=';')
-    processed_data = pd.read_csv('data/processed/data.csv')
+    raw_data = pd.read_csv(os.path.join(PATH_TO_DATA, 'raw', 'data.csv'), delimiter=';')
+    processed_data = pd.read_csv(os.path.join(PATH_TO_DATA, 'processed', 'data.csv'))
     return raw_data, processed_data
 
 

@@ -1,2 +1,26 @@
-/notebooks
+.git
+.github
+.gitignore
+.gitattributes
+.dockerignore
+Dockerfile
+
+__pycache__/
+*.py[cod]
+.venv
+venv/
+env/
+.pytest_cache
+.ruff_cache
+.mypy_cache
+
+.DS_Store
+.idea
+.vscode
+
+# Only needed to re-run hyperparameter optimization, not to serve the app.
 optuna_models_optimization.db
+**/catboost_info/**
+
+# Never bake credentials into the image.
+.streamlit/secrets.toml

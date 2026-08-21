@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "Photocatalysis: machine learning for g-C3N4 synthesis optimization"
+abstract: >-
+  Machine learning pipeline that predicts the photocatalytic hydrogen
+  production efficiency of graphitic carbon nitride (g-C3N4) from its
+  synthesis parameters, with hyperparameter optimization, SHAP-based feature
+  importance analysis and a Streamlit web interface.
+type: software
+version: 1.0.0
+license: MIT
+url: "https://github.com/ShockOfWave/photocatalysis"
+repository-code: "https://github.com/ShockOfWave/photocatalysis"
+keywords:
+  - photocatalysis
+  - g-C3N4
+  - machine learning
+  - hydrogen production
+authors:
+  - given-names: "Veronika Yu."
+    family-names: Yurova
+    affiliation: "ITMO University, Saint Petersburg, Russia"
+  - given-names: "Kseniya O."
+    family-names: Potapenko
+    affiliation: "Boreskov Institute of Catalysis SB RAS, Novosibirsk, Russia"
+  - given-names: "Timur A."
+    family-names: Aliev
+    affiliation: "ITMO University, Saint Petersburg, Russia"
+  - given-names: "Ekaterina A."
+    family-names: Kozlova
+    affiliation: "Boreskov Institute of Catalysis SB RAS, Novosibirsk, Russia"
+  - given-names: "Ekaterina V."
+    family-names: Skorb
+    affiliation: "ITMO University, Saint Petersburg, Russia"
+preferred-citation:
+  type: article
+  title: >-
+    Optimization of g-C3N4 synthesis parameters based on machine learning to
+    predict the efficiency of photocatalytic hydrogen production
+  authors:
+    - given-names: "Veronika Yu."
+      family-names: Yurova
+    - given-names: "Kseniya O."
+      family-names: Potapenko
+    - given-names: "Timur A."
+      family-names: Aliev
+    - given-names: "Ekaterina A."
+      family-names: Kozlova
+    - given-names: "Ekaterina V."
+      family-names: Skorb
+  journal: "International Journal of Hydrogen Energy"
+  volume: 81
+  start: 193
+  end: 203
+  year: 2024
+  doi: "10.1016/j.ijhydene.2024.07.245"
