@@ -9,6 +9,7 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 build/
 develop-eggs/
 dist/
@@ -92,8 +93,8 @@ target/
 # CatBoost logs
 **/catboost_info/**
 
-# Poetry lock
-poetry.lock
+# Poetry lock is committed on purpose: it pins the exact environment the
+# published models were trained with (see pyproject.toml).
 
 # Hide png and pdf
 **.png**

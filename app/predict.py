@@ -83,10 +83,10 @@ if st.button("Predict W(H2)"):
     best_result[best_result.index[1]] = le_dob.inverse_transform([int(best_result[best_result.index[1]])])
     best_result[best_result.index[2]] = le_method.inverse_transform([int(best_result[best_result.index[2]])])
     best_result[best_result.index[8]] = le_donor.inverse_transform([int(best_result[best_result.index[8]])])
-    
+
     st.markdown(f'''
                 ### Predicted W(H2)^b [μmol/min] is {max_value}
                 #### There is best parameters
                 ''')
-    
+
     st.dataframe(best_result, height=((len(best_result) + 1) * 35 + 3))

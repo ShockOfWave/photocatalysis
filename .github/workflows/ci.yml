@@ -1,0 +1,44 @@
+name: CI
+
+# Static checks only: linting, dependency-lock consistency and a smoke import.
+# Training and the web app need the dataset, which is not part of the
+# repository, so nothing here touches models, metrics or reports.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # catboost 1.2.2 ships no wheels for 3.12+, and pyproject caps the
+        # supported range accordingly.
+        python-version: ["3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        run: pipx install "poetry>=2.0"
+
+      - name: Check pyproject and lock file are consistent
+        run: poetry check --lock
+
+      - name: Install dependencies
+        run: poetry install --without train
+
+      - name: Lint
+        run: poetry run ruff check .
+
+      - name: Smoke import
+        run: poetry run python -c "import src, src.utils, src.models.predict_model, src.data.make_dataset; print(src.__version__)"

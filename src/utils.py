@@ -16,7 +16,6 @@ def get_project_path():
 PATH_TO_DATA = os.path.join(get_project_path(), 'data')
 PATH_TO_MODELS = os.path.join(get_project_path(), 'models')
 PATH_TO_REPORTS = os.path.join(get_project_path(), 'reports')
-PATH_TO_EVALUATIONS = os.path.join(get_project_path(), 'evaluations')
 
 
 def check_password():

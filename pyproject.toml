@@ -1,35 +1,68 @@
-[tool.poetry]
+[project]
 name = "photocatalysis"
-version = "0.1.0"
-description = ""
-authors = ["ShockOfWave <shockofwave90@gmail.com>"]
+version = "1.0.0"
+description = "Machine learning for optimizing g-C3N4 synthesis parameters to predict photocatalytic hydrogen production efficiency"
 readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10,<3.12"
+keywords = ["photocatalysis", "g-C3N4", "machine-learning", "hydrogen-production", "optuna", "catboost"]
+authors = [
+    { name = "ShockOfWave", email = "shockofwave90@gmail.com" },
+    { name = "Veronika Yu. Yurova" },
+    { name = "Kseniya O. Potapenko" },
+    { name = "Timur A. Aliev" },
+    { name = "Ekaterina A. Kozlova" },
+    { name = "Ekaterina V. Skorb" },
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-numpy = "^1.26.2"
-matplotlib = "^3.8.2"
-streamlit = "^1.29.0"
-seaborn = "^0.13.0"
-scikit-learn = "^1.3.2"
-catboost = "^1.2.2"
-openpyxl = "^3.1.2"
-st-pages = "^0.4.5"
+# Versions are pinned exactly to the set the published models were trained
+# with: the stored .pkl files carry scikit-learn 1.3.2, and the remaining
+# lower bounds of the original caret ranges belong to the same environment.
+# Loosening them risks breaking deserialization of models/ and
+# serialized_models/, so keep them frozen together with poetry.lock.
+dependencies = [
+    "numpy==1.26.2",
+    "pandas==2.1.4",
+    "matplotlib==3.8.2",
+    "streamlit==1.29.0",
+    "seaborn==0.13.0",
+    "scikit-learn==1.3.2",
+    "catboost==1.2.2",
+    "st-pages==0.4.5",
+]
 
+[project.urls]
+Homepage = "https://github.com/ShockOfWave/photocatalysis"
+Repository = "https://github.com/ShockOfWave/photocatalysis"
+Publication = "https://doi.org/10.1016/j.ijhydene.2024.07.245"
+
+[tool.poetry]
+# This repository is an application, not a distributable library: the code
+# lives in src/ and app/ and is run in place. Without this, `poetry install`
+# fails looking for a package named "photocatalysis".
+package-mode = false
+
+# Only needed to re-run hyperparameter optimization and training.
 [tool.poetry.group.train.dependencies]
-python = "^3.10"
-scikit-learn = "^1.3.2"
-optuna = "^3.4.0"
-catboost = "^1.2.2"
-jupyter = "^1.0.0"
-openpyxl = "^3.1.2"
-scikit-plot = "^0.3.7"
-shap = "^0.44.0"
-seaborn = "^0.13.0"
-optuna-dashboard = "^0.13.0"
-rich = "^13.7.0"
+optuna = "3.4.0"
+optuna-dashboard = "0.13.0"
+shap = "0.44.0"
+joblib = "1.3.2"
+rich = "13.7.0"
 
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.15"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "W"]
+ignore = ["E501"]  # long lines are the markdown texts of the Streamlit pages
+
+[tool.ruff.lint.per-file-ignores]
+# Whitespace inside st.markdown() is significant: two trailing spaces are a
+# line break in Markdown, so these blocks are left exactly as rendered.
+"app/train.py" = ["W291", "W293"]
+"app/welcome.py" = ["W293"]

@@ -49,7 +49,7 @@ st.markdown(
 st.table(metrics)
 
 st.markdown(
-    f"""Table shows that best results were made by Gradient Boosting and MLP. 
+    """Table shows that best results were made by Gradient Boosting and MLP. 
     We deside use Gradient boosting, 
     because is has less error on train dataset and 
     better worked with data without process."""
@@ -59,7 +59,7 @@ y_true = df[df.columns[-1]].values
 
 pred = model.predict(sc.transform(df.drop(df.columns[-1], axis=1)))
 
-st.markdown(f"""
+st.markdown("""
             ### Best model metrics
             Best model shows us very good metrics:
             
@@ -77,7 +77,7 @@ st.image(
     caption='Regression plot'
 )
 
-st.markdown(f"""
+st.markdown("""
 ### Feature importance
 For model analysis used [SHAP](https://github.com/shap/shap) library
 
